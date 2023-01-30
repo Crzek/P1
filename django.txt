@@ -1,0 +1,5 @@
+install
+pip install Django`
+
+initialitation, esto creara un carpeta con el proy y subcarpetas
+django-admin startproject <nameProy>

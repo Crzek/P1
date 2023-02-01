@@ -1,5 +1,59 @@
-install
-pip install Django`
+Django Framework (marco o entorno de trabajo) de codigo abierto
+Para que sirve?
+Crear sitios Web conplejos
 
-initialitation, esto creara un carpeta con el proy y subcarpetas
+MVC ---Modelo Vista Controlador----->laravel, symfony..
+Django utiliza MTV  ----model template view, pero el modelo sigue siendo el mismo.
+
+
+dividir en 3 grandes modelos
+-Vista / Template (con el que el usuario interactua, el usuraio ve)
+
+-Controlador / view (comunicacion vista-modelo)
+
+-modelo (gestionar datos---BBDD)
+
+BBDD
+soportado 
+SQlite3 (por defecto)
+PostgreSQL (recomendado)
+MySQL (configurar, los demas)
+Oracle
+
+Conectores
+sap SQl
+sql server
+
+Carpetas
+manage ---> interecturar con el proy Django
+
+init --->paquetes
+settings ---->configuraciones de django
+urls ----> guarda las url del proy, es como un Indice o table de contenido.
+wsgi ----> relativo al servidor web WSGI, que vamos a utilizar.
+asgi --> relativo al servidor web ASGI, que vamos a utilizar.
+
+install
+pip install Django
+
+initialitation, esto creara un carpeta con el proy y subcarpetas, donde se encontrara los archivos de Django
 django-admin startproject <nameProy>
+
+ver lo que puede hacer el archivo manage.py, diregete a su dir.
+manege.py help
+python manage.py help
+
+crear BBDD.
+python manage.py migrate
+
+Arrancar servidor ---> no para proyecto serio. ya no aguanta consultas simultaneas.
+python manage.py runserver
+
+Modulo django.Http
+request --- solicitar peticion
+HttpResponse --- envia respuesta (peticion)
+debemos crear un archcivo en el proy de django: para craer una view
+views.py ----en este .py se creara funciones que cada 1 sera 1 View
+urls.py ----> se debera importar el fichero views para utilizar las views
+
+python 

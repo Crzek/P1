@@ -8,6 +8,7 @@ Django utiliza MTV  ----model template view, pero el modelo sigue siendo el mism
 
 dividir en 3 grandes modelos
 -Vista / Template (con el que el usuario interactua, el usuraio ve)
+son Cadenas de texto (HTML casi siempre)
 
 -Controlador / view (comunicacion vista-modelo)
 
@@ -50,10 +51,30 @@ Arrancar servidor ---> no para proyecto serio. ya no aguanta consultas simultane
 python manage.py runserver
 
 Modulo django.Http
+from django.http import HttpResponse
+
 request --- solicitar peticion
 HttpResponse --- envia respuesta (peticion)
 debemos crear un archcivo en el proy de django: para craer una view
 views.py ----en este .py se creara funciones que cada 1 sera 1 View
-urls.py ----> se debera importar el fichero views para utilizar las views
+e.g
+from django.http import HttpResponse
+def saludo(request):
+  return HttpResponse("buenass esto es una paguina con Django")
 
-python 
+urls.py ----> se debera importar las funciones de views.py para utilizar.
+
+Template
+Crear objeto 
+plt = Template(doc_externo.read())
+
+Crear Contexto
+ctx = Context() ----> contenido dinamico (variables, funciones...)
+ctx = Context({
+  "varible_html":varible_python,
+  "elemnto":obj.python
+  }
+)
+
+Renderizado de obj Templete
+doc = plt.render(ctx)

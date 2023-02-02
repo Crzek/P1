@@ -22,5 +22,7 @@ urlpatterns = [
     path('saludo/', saludo),  #nombre cualquiera  , funcion de archivo views.py
     path('bye/', despedida),
     path('date/', date),
-    path('any/', toh1("algo que decir","h2")),
+    #path('date/', date),
+    #path('any/', toh1("algo que decir","h2")),
+    path('edad/<int:age>/<int:year>', calculaedad )   #2 parametros en calculaedad(request,age,year)
 ]

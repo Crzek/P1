@@ -152,5 +152,14 @@ Filtros: barra vertical  |
 
 Plantilla incrustadas
 Son varias Plantillas que fusionan para forma un paguina
-si quieres incluir una platilla, e.g barra.html 
+si quieres incluir una platilla, e.g barra.html
+vamos a la Plantilla principal ---> mitemplate.html
+siguiendo la estructura de HTML, vamos donde la pondriamos
+{% include "<name_plantilla.html>" %}
+
+Herencia de Plantilla
+Para escribir menos codigo, y partir de una html, donde lo unico que vamos a cambiar es el contenido cambiante.
+---!!!escribir en la 1r linia de la plantilla HIJA
+{% extends "<padre.html>" %}
+
 

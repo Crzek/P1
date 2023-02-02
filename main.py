@@ -1,4 +1,0 @@
-"""
-Proy utilizando Django 
-
-"""

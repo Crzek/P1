@@ -11,6 +11,7 @@ dividir en 3 grandes modelos
 son Cadenas de texto (HTML casi siempre)
 
 -Controlador / view (comunicacion vista-modelo)
+se debe craer un fichero views.py que so fucniones y cada una es una VIEW y luego estas se deben incluir en Urls.py
 
 -modelo (gestionar datos---BBDD)
 
@@ -153,13 +154,21 @@ Filtros: barra vertical  |
 Plantilla incrustadas
 Son varias Plantillas que fusionan para forma un paguina
 si quieres incluir una platilla, e.g barra.html
-vamos a la Plantilla principal ---> mitemplate.html
-siguiendo la estructura de HTML, vamos donde la pondriamos
+vamos a la Plantilla principal ---> base.html
+siguiendo la estructura de HTML, 1r saber donde vamos a colocarla o donde la pondriamos
 {% include "<name_plantilla.html>" %}
 
 Herencia de Plantilla
 Para escribir menos codigo, y partir de una html, donde lo unico que vamos a cambiar es el contenido cambiante.
----!!!escribir en la 1r linia de la plantilla HIJA
+---!!!escribir en la 1r linia de la plantilla HIJA y mirar en la Padre cuales son los bloques cambiantes --> {% block title %} content  {% endblock %}
 {% extends "<padre.html>" %}
 
-
+proyecto VS Aplicacion
+proyecto--->> piuede tener 1 o muchas applicacioones
+Aplicacion forma parte del proyecto
+ejemplo: 
+proyecto tienda
+applicacioones:
+app control Almacen 
+app ventas
+app panel de control

@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.template import Template, Context #caragr de forma manual 
 from django.template import loader    #cargador
 
+from django.shortcuts import render as r  #lo carga de forma muy rapido con 1 linea
 import datetime
 
 
@@ -11,16 +12,7 @@ class Person:
     self.name = name
     self.l_name = last_name
 
-def calculaedad(request, age, year):
-  #age = 26
-  pediod = year - 2023
-  futuryear = age + pediod
-  doc = f"En el año {year} tendras {futuryear}","h2"
-  return HttpResponse(doc)
-
 def saludo(request):      #1r view
-
-
   #nombre = "Erick"
   persona = Person("Javier", "Cruz")
 
@@ -72,9 +64,36 @@ def saludo(request):      #1r view
       ]
     }
   )
-
-
   return HttpResponse(doc)
+
+def calculaedad(request, age, year):
+  #age = 26
+  pediod = year - 2023
+  futuryear = age + pediod
+  doc = f"En el año {year} tendras {futuryear}","h2"
+  return HttpResponse(doc)
+
+def genusy(request):
+  date = datetime.datetime.now()
+
+  plt = loader.get_template("gny.html")
+  doc = plt.render({
+    "date":date
+
+    }
+  )
+  return HttpResponse(doc)
+
+def dad(resquest):  #render shortcut
+  plt = r(resquest,"padre.html")
+  return plt
+
+def nav(request):
+  return r(request,
+  "superior/barra.html",
+  {
+    "fecha":datetime.datetime.now()
+  })
 
 def despedida(request):     #2n VIEW
   return HttpResponse("Nos vemos, Adios")

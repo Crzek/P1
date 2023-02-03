@@ -184,10 +184,51 @@ Cuantas app se deben ccrar? eso depende de la practica y puedes tener una proyec
 Modularizacion (reutilizar codigo)
 
 
------------------------
+------------------------------------------------------------------------------------
 Como crear las bases de Datos 
 
 (SQLite3)Automatico
 Utilizando la ---Class Model---, pora crear modificar, insertar...
 Django No puedo trabajar con modelo si no has hecho un app
 Model(neceesario para trabjar) == App
+
+Crear app
+python manage.py startapp <nombre APP>
+
+nombreappp (dir)
+__init__ ---->
+admin.py  --->
+apps.py   --->
+models.py --->
+tests.py  --->
+views.py  --->
+
+Models.py
+Cerar una class para cada tabla de BBDD, No  hay que saber SQl
+E.g
+1.Tabla Clientes:     2. tabla articulos      3 tabla pedidos
+    nombre                nombre                   N_pedido
+    direccion             seccion                  fecha
+    email                 precio                   entregado
+    tfl
+
+from django.db import models
+
+class Clientes(models.Model):  #heredamos un clase Model
+  #nombre = models.<depende de o que almacene>(max_length=30)
+  nombre = models.CahrField(max_length=30) #caracteres y longitud maxima de 30 caracteres
+  direccion = models.CharField(max_length=50)
+  email = models.EmailField(max_length=14)
+  telefono = models.CharField(max_length=10)
+
+class Articulos(models.Model):
+  nombre = models,CharField(max_length=)
+  seccion = models.CharField()
+  precio = models.IntegerField()
+
+class Pedidos(models.Model):
+  N_pedido = models.IntegerField()
+  fecha = models.DateField()
+  entregado = models.BooleanField()
+
+Se debe de inserta en el archivo settings.py ----> INSTALLED_APP=["nombre APP"]---> especificar la Carpeta de APP

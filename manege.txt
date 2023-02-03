@@ -3,4 +3,56 @@ Comnados manege.py
 Poner un marcha un servidor web
 python manage.py runserver 
 
-python manage.py 
+crear crear un App
+python manage.py startapp <nameAPP>
+
+ver si hay algun error
+python manage.py check <nombre app>
+-----
+1.Hecer migraciones ---unas ves creadas las tablas creamos la bbdd
+python manage.py makemigrations
+
+2.Cree las tablas en sql Dajango
+python manage.py sqlmigrate <nombre APP> <numero migracion que da antes en cmd>
+
+3. craer contenido de la tablas en bbdd
+python manage.py migrate
+
+
+
+Manipular Datos desde consola 
+python manage.py shell
+
+--------
+Desde la consola>>> hacemos como una importacion
+from <nombre appp>.models import <tabla>
+
+añadir, es como llama a la Class, cara variable es un objeto 
+2 pasos
+art = <tabla>(nombre="Erick",seccion="persona",percio=90)
+art.save()
+
+1 paso
+art = <tabla>.objects.create(nombre="Erick",seccion="persona", precio=20)
+
+Manipular BBDD, como si modificaras un objeto
+art.precio=95
+art.save()
+
+Delete o eliminar, sabiendo que clave unica tiene el producto SQL(primary key)
+art = <table>objects.get(id=<numero>)   #pero en esta variable serimos teniendo el objeto eliminado, se puede volcer a recuperar.
+art.delete()
+
+Visualizar una Query
+l = <table> objects.all()
+l.query.__str__()
+
+------
+
+PostgreSQL
+configuraciones:
+1.descargar de forma normacon .exe --> ejecutas
+2. crear un Base de datos nueva ---> 1. modo visual
+    2.2 por Comnados
+    Create database <nombre BBDD>
+

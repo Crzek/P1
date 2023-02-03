@@ -13,7 +13,7 @@ son Cadenas de texto (HTML casi siempre)
 -Controlador / view (comunicacion vista-modelo)
 se debe craer un fichero views.py que so fucniones y cada una es una VIEW y luego estas se deben incluir en Urls.py
 
--modelo (gestionar datos---BBDD)
+-Modelo (gestionar datos---BBDD)
 
 BBDD
 soportado 
@@ -35,7 +35,7 @@ urls ----> guarda las url del proy, es como un Indice o table de contenido.
 wsgi ----> relativo al servidor web WSGI, que vamos a utilizar.
 asgi --> relativo al servidor web ASGI, que vamos a utilizar.
 
-
+--------------------------------
 install
 pip install Django
 
@@ -52,6 +52,10 @@ python manage.py migrate
 Arrancar servidor ---> no para proyecto serio. ya no aguanta consultas simultaneas.
 python manage.py runserver
 
+
+
+---------------------------
+
 Modulo django.Http
 from django.http import HttpResponse
 
@@ -66,6 +70,7 @@ def saludo(request):
 
 urls.py ----> se debera importar las funciones de views.py para utilizar.
 
+---------
 Template
 Crear objeto 
 plt = Template(doc_externo.read())
@@ -82,7 +87,9 @@ ctx = Context({
 Renderizado de obj Templete
 "Renderizar" en Django es la acción de convertir un template en una respuesta HTTP, es decir, la acción de generar el HTML final a partir de un archivo de plantilla y contexto específico.
 doc = plt.render(ctx)
+-----------
 
+------------------
 Cargadores o Loader
 se ha de especificar una ruta donde se guardaran todas las plantillas.
 debemos esoecificar la ruta en DIRS
@@ -109,6 +116,8 @@ def View_1(request):
   doc = render(request,"<plantilla.html>", <Diccionario=Context>)
   return doc
 
+
+--------------------------
 Plantilla HTML
 
 Orden de llamadas Django, en la nomenclatura del punto
@@ -150,7 +159,7 @@ Filtros: barra vertical  |
 {{class|upper}}
 {{class|fisrt|lower}}
 
-
+---------------------
 Plantilla incrustadas
 Son varias Plantillas que fusionan para forma un paguina
 si quieres incluir una platilla, e.g barra.html
@@ -158,17 +167,27 @@ vamos a la Plantilla principal ---> base.html
 siguiendo la estructura de HTML, 1r saber donde vamos a colocarla o donde la pondriamos
 {% include "<name_plantilla.html>" %}
 
+---------------------
 Herencia de Plantilla
 Para escribir menos codigo, y partir de una html, donde lo unico que vamos a cambiar es el contenido cambiante.
 ---!!!escribir en la 1r linia de la plantilla HIJA y mirar en la Padre cuales son los bloques cambiantes --> {% block title %} content  {% endblock %}
 {% extends "<padre.html>" %}
 
+----------------------
 proyecto VS Aplicacion
 proyecto--->> piuede tener 1 o muchas applicacioones
 Aplicacion forma parte del proyecto
 ejemplo: 
 proyecto tienda
-applicacioones:
-app control Almacen 
-app ventas
-app panel de control
+applicacioones: app control Almacen , app ventas, app panel de control
+Cuantas app se deben ccrar? eso depende de la practica y puedes tener una proyecto que tengo 3 app y otro y poryecto que tengo 4 y funcionen de la misma forma.
+Modularizacion (reutilizar codigo)
+
+
+-----------------------
+Como crear las bases de Datos 
+
+(SQLite3)Automatico
+Utilizando la ---Class Model---, pora crear modificar, insertar...
+Django No puedo trabajar con modelo si no has hecho un app
+Model(neceesario para trabjar) == App

@@ -1,0 +1,6 @@
+Comnados manege.py
+
+Poner un marcha un servidor web
+python manage.py runserver 
+
+python manage.py 

@@ -40,11 +40,11 @@ art.precio=95
 art.save()
 
 Delete o eliminar, sabiendo que clave unica tiene el producto SQL(primary key)
-art = <table>objects.get(id=<numero>)   #pero en esta variable serimos teniendo el objeto eliminado, se puede volcer a recuperar.
+art = <table>.objects.get(id=<numero>)   #pero en esta variable serimos teniendo el objeto eliminado, se puede volcer a recuperar.
 art.delete()
 
 Visualizar una Query
-l = <table> objects.all()
+l = <table>.objects.all()
 l.query.__str__()
 
 ------
@@ -56,3 +56,22 @@ configuraciones:
     2.2 por Comnados
     Create database <nombre BBDD>
 
+debemos tener instalada la libreria --- psycopg2 ---
+pip install psycopg2
+
+Modificar settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '<nombre BBDD postgres',
+        "USER": 'postgres',
+        "PASSWORD": 'suprem',
+        "HOST": '127.0.0.1',
+        'DATABASE_PROT':'5432',
+}
+
+hacer consulta tipo:
+select * from "<table>";
+where "<puntoTable> = <algo>"
+
+<table>.objects.filter(<puntoTable> = "<algo>")

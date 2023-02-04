@@ -218,7 +218,7 @@ class Clientes(models.Model):  #heredamos un clase Model
   #nombre = models.<depende de o que almacene>(max_length=30)
   nombre = models.CahrField(max_length=30) #caracteres y longitud maxima de 30 caracteres
   direccion = models.CharField(max_length=50)
-  email = models.EmailField(max_length=14)
+  email = models.EmailField(blank=True, null=True)
   telefono = models.CharField(max_length=10)
 
 class Articulos(models.Model):
@@ -232,3 +232,6 @@ class Pedidos(models.Model):
   entregado = models.BooleanField()
 
 Se debe de inserta en el archivo settings.py ----> INSTALLED_APP=["nombre APP"]---> especificar la Carpeta de APP
+
+Para que el campo sea opcional
+(blank=True, null=True)---->como parametros

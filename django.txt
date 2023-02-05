@@ -235,3 +235,4 @@ Se debe de inserta en el archivo settings.py ----> INSTALLED_APP=["nombre APP"]-
 
 Para que el campo sea opcional
 (blank=True, null=True)---->como parametros
+

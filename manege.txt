@@ -92,7 +92,7 @@ Crear un supreUsuario y seguir los pasos
 python manage.py createsuperuser
 
 
-#Tener disponible en Panel adm tener diponible el modelo
+#Tener disponible en Panel administrado el Articulo si se crean otra clase modelos han de ponerse
 admin.site.register(Articulos)
 
 Modificar campos de la web ----> cuando quierra rellenar le salga
@@ -100,3 +100,16 @@ models.py
 
 class <tabla>(models.Model):
     direccion=models.CharField(max_lengtj=50, Verbose_name="La direccion")
+
+Crear columnas con su campo y cuadro de busqueda (foto)
+1. Ir al archivo admin.py
+2.crear una clase que herede de admin.modelAdmin
+class <tabla admin>(admin.modelAdmin):
+    #para ver columnas
+    list_display = ("nombre","email")   #Escribir exactamente que models.py
+
+    # para buscar por Nombre y telefono
+    search_field = ("nombre","telefono")
+
+3. añadirla enÑ
+    admin.site.register(<tabla>, <tabla Admin>)

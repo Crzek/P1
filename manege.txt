@@ -113,3 +113,9 @@ class <tabla admin>(admin.modelAdmin):
 
 3. registrar la clase <table admin>
     admin.site.register(<tabla>, <tabla Admin>)
+
+----
+https://youtu.be/DVOAjMuM4vM?t=674
+filtar por seccion en un nav aparte a la derecha
+list_filter = ("seccion",)  # !!! importante la como(,) #filtro vertical
+date_hierarchy = ("fecha")      #filtro horizontal

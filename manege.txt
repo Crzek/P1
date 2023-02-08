@@ -119,3 +119,22 @@ https://youtu.be/DVOAjMuM4vM?t=674
 filtar por seccion en un nav aparte a la derecha
 list_filter = ("seccion",)  # !!! importante la como(,) #filtro vertical
 date_hierarchy = ("fecha")      #filtro horizontal
+----
+Cambiar idioma
+1. ir a settings.py
+2. LENGUAGE_CODE = "en-us"     #usa 
+2. LENGUAGE_CODE = "es-eu"     #español
+
+---
+Agregar Usuarios----MAnejar usuarios y grupos
+Staf ----> permites a un usuario entar en panel de administrado
+Active ----> tiene que estar suscrito o registrado
+
+Grupos, serven para añadir 50 personas y estas tengas las mismas funcionalidades.
+
+----
+https://youtu.be/B840ou6pcjg?t=68
+Formularios MAnuales (envio de datos al servidor)
+HttpRequest 
+
+

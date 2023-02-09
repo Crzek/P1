@@ -117,7 +117,7 @@ class <tabla admin>(admin.modelAdmin):
 ----
 https://youtu.be/DVOAjMuM4vM?t=674
 filtar por seccion en un nav aparte a la derecha
-list_filter = ("seccion",)  # !!! importante la como(,) #filtro vertical
+list_filter = ("seccion",)  # !!! importante la coma(,) ya que es una tupla #filtro vertical
 date_hierarchy = ("fecha")      #filtro horizontal
 ----
 Cambiar idioma
@@ -134,7 +134,11 @@ Grupos, serven para añadir 50 personas y estas tengas las mismas funcionalidade
 
 ----
 https://youtu.be/B840ou6pcjg?t=68
+https://docs.djangoproject.com/en/4.1/ref/request-response/#django.http.HttpResponse
 Formularios MAnuales (envio de datos al servidor)
-HttpRequest 
+Utilizar --> Class HttpRequest 
+1. Crear un formulario HTML ---> tendria que estar en la carpeta template
+
+
 
 

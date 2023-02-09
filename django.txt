@@ -197,9 +197,9 @@ python manage.py startapp <nombre APP>
 
 nombreappp (dir)
 __init__ ---->
-admin.py  --->
+admin.py  --->Para poder filtar en el apartado admin del panel del adminitrador
 apps.py   --->
-models.py --->
+models.py --->debe de crearce cada tabla de bbdd
 tests.py  --->
 views.py  --->
 

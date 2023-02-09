@@ -138,6 +138,26 @@ https://docs.djangoproject.com/en/4.1/ref/request-response/#django.http.HttpResp
 Formularios MAnuales (envio de datos al servidor)
 Utilizar --> Class HttpRequest 
 1. Crear un formulario HTML ---> tendria que estar en la carpeta template
+    <formulario>.html
+        <form action="/buscar/" method="get">
+            <label for="Producto">Producto</label>
+            <input type="text" name="Producto" id="Producto">
+
+        </form>
+
+2. Registramos  <formulario>.html en views.py (ya lo hemos hecho)
+cada views es una funcion ---> utilizando render (shortcut)
+
+from django.shortcuts import render
+def <name view>(request):
+    return render(request,<formulario>.html)
+
+https://youtu.be/B840ou6pcjg?t=703
+3. Registrar la View en urls.py
+importar <name view>
+    path("<nombre URL",<name view>),
+
+
 
 
 
